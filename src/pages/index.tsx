@@ -1,13 +1,15 @@
+import { Breakdown } from "@/comps/Breakdown";
+import { Button } from "@/comps/Button";
+import { Call } from "@/comps/Call";
+import { Footer } from "@/comps/Footer";
+import { Header } from "@/comps/Header";
+import { RecentWork, RecentWorkList } from "@/comps/RecentWorkList";
+import { Testimonial, TestimonialList } from "@/comps/TestimonialList";
 import styles from "@/styles/home.module.scss";
 import Head from 'next/head'
-import { Header } from './comps/Header'
-import { Button } from "./comps/Button";
-import { RecentWork, RecentWorkList } from "./comps/RecentWorkList";
+
 import Image from "next/image";
-import { Breakdown } from "./comps/Breakdown";
-import { Testimonial, TestimonialList } from "./comps/TestimonialList";
-import { Call } from "./comps/Call";
-import { Footer } from "./comps/Footer";
+
 
 export default function Home() {
   return (
