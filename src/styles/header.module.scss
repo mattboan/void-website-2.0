@@ -1,0 +1,91 @@
+@import "./theme.scss";
+
+.header {
+    max-width: 100vw;
+    width: calc(100% - 60px);
+    padding: 25px 30px;
+
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    top: 0;
+
+    z-index: 1000;
+
+
+    .inner {
+        display: flex;
+        justify-content: space-between;
+
+        .logo_con {
+            cursor: pointer;
+
+            .menu_btn {
+                display: none;
+            }
+
+        }
+
+        .actions_con {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+    }
+
+    @include sm {
+        // position: relative;
+        padding: 15px;
+        // background-color: green;
+        width: calc(100% - 30px);
+
+
+        .inner {
+
+            .logo_con {
+                z-index: 1000;
+                display: flex;
+                width: 100%;
+                // background-color: green;
+                align-items: center;
+                justify-content: space-between;
+
+                .menu_btn {
+                    display: block;
+                }
+            }
+
+            .actions_con {
+                background-color: $bg;
+                padding: 15px;
+                padding-top: 85px;
+                position: absolute;
+                top: calc(-100vh - 100px);
+                right: 0;
+                left: 0;
+                // width: 100vw;
+                width: calc(100% - 30px);
+
+                height: calc(100vh);
+                background-color: $bg;
+
+                // opacity: 0.8;
+                // Blur whatever is underneath
+
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+                transition: top 0.5s ease-in-out;
+
+            }
+
+            .menu_open {
+                top: 0;
+            }
+
+        }
+    }
+}

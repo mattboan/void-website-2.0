@@ -1,0 +1,28 @@
+@import "./theme.scss";
+
+.footer_wrapper {
+    margin-top: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    width: 100%;
+
+    position: relative;
+
+    .socials {
+        display: flex;
+        gap: 15px;
+    }
+
+    .copy {
+        font-size: 0.8rem;
+    }
+
+    @include sm {
+        margin-top: 0px;
+    }
+}

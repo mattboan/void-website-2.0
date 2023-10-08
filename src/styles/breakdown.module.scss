@@ -1,0 +1,74 @@
+@import "./theme.scss";
+
+.breakdown {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    min-height: 75px;
+    // max-height: 75px;
+    transition: all 0.2s ease-in-out;
+
+    @include sm {
+        min-height: 58px;
+        // max-height: 58px;
+    }
+
+    .header {
+        border-top: 1px solid $dark-grey;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .header_left {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+
+            .number {
+                width: 30px;
+                height: 30px;
+                border-radius: 100%;
+                background-color: $dark-grey;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 0.8rem;
+                font-family: monospace;
+            }
+
+            h3 {
+                margin: 0;
+            }
+
+        }
+
+        .header_actions {
+            .header_action {
+                width: 30px;
+                height: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.5rem;
+                user-select: none;
+                cursor: pointer;
+            }
+        }
+
+    }
+
+
+
+    .content {
+        // position: absolute;
+
+        // height: 0px;
+        padding: 15px;
+    }
+}
+
+
+// .open {
+//     max-height: 100%;
+// }

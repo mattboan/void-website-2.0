@@ -1,0 +1,71 @@
+@import "./theme.scss";
+
+.testimonials_wrapper {
+
+    // overflow: hidden;
+
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+    padding-bottom: 100px;
+
+    .testimonials_wrapper_inner {
+        display: flex;
+        gap: 30px;
+        align-items: flex-start;
+
+    }
+
+    .controls {
+        right: 0;
+        position: absolute;
+        bottom: 8px;
+
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .testimonial_item {
+        width: 350px;
+        min-width: 350px;
+        background-color: $bg;
+        border: 1px solid $dark-grey;
+        padding: 30px;
+        border-radius: $br;
+        font-family: monospace;
+
+        @include sm {
+            padding: 20px;
+            min-width: calc(100vw - 73px);
+        }
+
+
+        .header {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            align-items: center;
+
+            .logo {
+                width: 70px;
+                height: 70px;
+                border-radius: $br;
+                overflow: hidden;
+
+                .img {
+                    width: 100%;
+                    height: 100%;
+                    background-position: center;
+                    background-size: cover;
+                }
+            }
+
+            .name {
+                font-weight: bold;
+                font-size: 1rem;
+            }
+        }
+    }
+}

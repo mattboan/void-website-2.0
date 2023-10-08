@@ -1,0 +1,61 @@
+$fg: #F1F1F1;
+$bg: #161616;
+
+$grey: #8F8F8F;
+$dark-grey: #272727;
+
+$br: 5px;
+$br-secondary: 2px;
+
+$mono_font: 'Roboto Mono', monospace;
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+// Small devices
+@mixin sm {
+    @media (max-width: #{$screen-sm-min}) {
+        @content;
+    }
+}
+
+// Medium devices
+@mixin md {
+    @media (max-width: #{$screen-md-min}) {
+        @content;
+    }
+}
+
+// Large devices
+@mixin lg {
+    @media (max-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+
+// Extra large devices
+@mixin xl {
+    @media (max-width: #{$screen-xl-min}) {
+        @content;
+    }
+}
+
+// ---- FONT DECLARATIONS ----
+
+// Import local mona sans variable font (woff2)
+@font-face {
+    font-family: 'Mona Sans';
+    src: url('/fonts/MonaSansVF.woff2') format('woff2-variations'),
+        url('/fonts/MonaSansVF.woff2') format('woff2');
+    font-weight: 100 900;
+    font-display: swap;
+}

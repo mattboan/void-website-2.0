@@ -1,0 +1,135 @@
+@import "./theme.scss";
+
+.hero {
+    // margin-top: -70px;
+    height: 100vh;
+    padding: 0px;
+    z-index: 0;
+    max-height: 1000px;
+
+    .video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .hero_img {
+        left: 0;
+        right: 0;
+        height: 100%;
+        max-height: 1000px;
+
+        position: absolute;
+        object-fit: cover;
+        position: absolute;
+        background-image: url("/hero.png");
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: cover;
+    }
+
+    .overlay {
+        left: 0;
+        right: 0;
+        max-height: 1000px;
+
+        height: 100%;
+        position: absolute;
+        z-index: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .hero_text {
+        left: 0;
+        right: 0;
+        max-height: 1000px;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 10;
+        text-align: center;
+        z-index: 100;
+    }
+}
+
+.mission {
+    margin-top: 200px;
+    max-width: 700px;
+
+    @include sm {
+        margin-top: 100px;
+    }
+}
+
+.focus_con {
+    margin-top: 200px;
+
+    @include sm {
+        margin-top: 100px;
+    }
+
+    .focus_items {
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        @include sm {
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .focus_item_con {
+            img {
+                max-height: 30px;
+                width: auto;
+            }
+
+            .a_wrapper {
+                margin-top: 30px;
+                width: fit-content;
+                max-width: fit-content;
+            }
+        }
+    }
+}
+
+.cta {
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @include sm {
+        margin-top: 100px;
+    }
+
+    .button-wrapper {}
+}
+
+.process {
+    margin-top: 200px;
+
+    @include sm {
+        margin-top: 100px;
+    }
+}
+
+.testimonials {
+    margin-top: 200px;
+    margin-bottom: 60px;
+
+    @include sm {
+        margin-top: 100px;
+    }
+}
