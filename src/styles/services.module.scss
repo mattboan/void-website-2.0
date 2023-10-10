@@ -1,0 +1,104 @@
+@import "./theme.scss";
+
+.hero {
+    margin-top: 160px;
+    width: 100%;
+
+    display: flex;
+    gap: 30px;
+
+    @include lg {
+        margin-top: 100px;
+        flex-direction: column;
+
+        .hero_content {
+            max-width: 100% !important;
+        }
+
+        .hero_image {
+            max-width: 100% !important;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .hero_content {
+        max-width: 50%;
+        width: 100%;
+    }
+
+    .hero_image {
+        max-width: 50%;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.services_cta {
+    max-width: 500px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-top: 130px;
+
+    @include md {
+        margin-top: 30px;
+        padding: 15px;
+
+    }
+}
+
+.services_list {
+    margin-top: 120px;
+    margin-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include md {
+        margin-top: 0px;
+    }
+
+    .service_item {
+        display: flex;
+        gap: 30px;
+
+        .content {
+            margin-top: 60px;
+            display: flex;
+            flex-direction: column;
+
+            img {
+                max-width: 30px;
+                height: auto;
+            }
+        }
+
+        .image {
+            img {
+                border-radius: 5px;
+                object-fit: cover;
+            }
+        }
+
+        @include md {
+            flex-direction: column;
+
+
+            .image {
+
+                img {
+
+                    height: 350px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

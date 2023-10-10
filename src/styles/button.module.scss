@@ -2,14 +2,14 @@
 
 .button {
     // all: unset;
-
+    font-weight: bold;
     background-color: $fg;
     color: $bg;
     border-radius: $br-secondary;
 
     border: 2px solid $fg;
 
-    padding: 8px 15px;
+    padding: 10px 15px;
     display: flex;
     justify-content: center;
     align-items: center;

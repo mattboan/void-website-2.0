@@ -1,0 +1,10 @@
+[
+    {
+        "id": 1,
+        "title": "Bulb Prototype",
+        "short_desc": "The Bulb prototype is used for measuring soil moisture condictions, it includes a pairing app that allows users to take measurements.",
+        "tags": ["Agriculture", "IoT Prototype", "Mobile App", "Web App"],
+        "header_images": ["/hero.png"],
+        "slug": "bulb-prototype"
+    }
+]

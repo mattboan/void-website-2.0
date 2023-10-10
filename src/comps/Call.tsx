@@ -36,7 +36,7 @@ export const Call = (props: Props) => {
             <Cal
                 calLink="matt-boan-d427d9/30min"
                 style={{ width: "90%", height: "100%", overflow: "scroll", marginLeft: "20px" }}
-                config={{ layout: 'month_view' }}
+                config={{ layout: 'month_view', focus: "null" }}
             />
             <div className={styles.footer}>
             </div>
