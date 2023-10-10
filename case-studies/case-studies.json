@@ -5,6 +5,16 @@
         "short_desc": "The Bulb prototype is used for measuring soil moisture condictions, it includes a pairing app that allows users to take measurements.",
         "tags": ["Agriculture", "IoT Prototype", "Mobile App", "Web App"],
         "header_images": ["/hero.png"],
-        "slug": "bulb-prototype"
+        "slug": "bulb-prototype-case-study",
+        "post_path": "/case-studies/posts/1.md"
+    },
+    {
+        "id": 2,
+        "title": "23rd Street Dashboard",
+        "short_desc": "The 23rd Street Dashboard is a web app that allows users to view and manage their IoT devices.",
+        "tags": ["Web App", "Prop Tech", "CMS"],
+        "header_images": ["/img/23rd-dash.png"],
+        "slug": "23rd-street-dashboard-case-study",
+        "post_path": "/case-studies/posts/2.md"
     }
 ]
