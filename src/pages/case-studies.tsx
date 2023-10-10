@@ -3,12 +3,15 @@ import { Footer } from '@/comps/Footer';
 import { Header } from '@/comps/Header';
 import { CaseStudy, get_case_studies } from '@/utils/case-studies.util';
 import Head from 'next/head';
+import { useRouter } from "next/router";
 
 const CaseStudies = ({ case_studies }: { case_studies: CaseStudy[] }) => {
+    const router = useRouter();
+
     return (
         <>
             <Head>
-                <title>void - blogs</title>
+                <title>Void | Case Studies</title>
                 <meta
                     name="description"
                     content="Explore a collection of insightful blogs by Matt (Void) covering various topics including web development, software trends, and industry insights. Stay informed and gain valuable knowledge in the world of development."
@@ -26,8 +29,8 @@ const CaseStudies = ({ case_studies }: { case_studies: CaseStudy[] }) => {
                 </div>
 
                 <div className={styles.case_studies}>
-                    {case_studies?.map((case_study) => (
-                        <div className={styles.case_study}>
+                    {case_studies?.map((case_study: CaseStudy) => (
+                        <div className={styles.case_study} onClick={() => router.push(`/case-studies/${case_study.slug}`)}>
                             <div className={styles.case_study_image}>
                                 <img src={case_study.header_images[0]} />
                             </div>

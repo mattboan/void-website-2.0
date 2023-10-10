@@ -4,10 +4,12 @@ import path from 'path';
 export interface CaseStudy {
     id: number;
     title: string;
-    tags: string;
+    tags: string[];
     short_desc: string;
     header_images: string[];
     slug: string;
+    content?: string;
+    post_path: string;
 }
 
 /**
