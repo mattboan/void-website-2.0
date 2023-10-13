@@ -36,7 +36,7 @@ export default function Services() {
                 </div>
 
                 <div className={styles.services_list}>
-                    <div className={styles.service_item}>
+                    <div className={styles.service_item} id="mobile">
                         <div className={styles.content}>
                             <Image src="/icons/mobile.png" alt="Web Icon" width={140} height={250} />
                             <h4>Mobile & Web Apps</h4>
@@ -49,7 +49,7 @@ export default function Services() {
                         </div>
                     </div>
 
-                    <div className={styles.service_item}>
+                    <div className={styles.service_item} id="web">
                         <div className={styles.content}>
                             <Image src="/icons/laptop.png" alt="Web Icon" width={140} height={250} />
                             <h4>Web Development</h4>
@@ -62,7 +62,7 @@ export default function Services() {
                         </div>
                     </div>
 
-                    <div className={styles.service_item}>
+                    <div className={styles.service_item} id="iot">
                         <div className={styles.content}>
                             <Image src="/icons/iot.png" alt="Web Icon" width={140} height={250} />
                             <h4>IoT Prototyping</h4>

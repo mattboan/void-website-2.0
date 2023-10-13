@@ -21,9 +21,8 @@ export const Header = () => {
         <div className={styles.header}>
             <div className={styles.inner}>
                 {/* Left */}
-                <div className={styles.logo_con} onClick={() => router.push("/")}>
-                    <Image src="/logo.png" alt="Void Studios Logo" width={40} height={40} />
-
+                <div className={styles.logo_con} >
+                    <Image src="/logo.png" alt="Void Studios Logo" width={40} height={40} onClick={() => router.push("/")} />
                     <div className={styles.menu_btn} onClick={() => setMenuOpen(!menuOpen)}>
                         <Image src="/icons/menu.svg" alt="Menu Button" width={20} height={20} />
                     </div>
@@ -33,7 +32,7 @@ export const Header = () => {
                 <div className={`${styles.actions_con} ${menuOpen && styles.menu_open}`}>
                     <Link href="/services">Our Services</Link>
                     <Link href="/case-studies">Case Studies</Link>
-                    <Button onClick={() => { }}>
+                    <Button onClick={() => router.push("/#call")}>
                         Book a Call
                     </Button>
                 </div>

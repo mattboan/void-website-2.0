@@ -9,15 +9,30 @@ import html from 'remark-html';
 import prism from 'remark-prism';
 import { CaseStudy, get_case_studies, get_case_study_by_slug } from '@/utils/case-studies.util';
 import { Header } from '@/comps/Header';
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { Call } from "@/comps/Call";
 
 const CaseStudy = ({ case_study }: { case_study: CaseStudy }) => {
     const router = useRouter();
+    const interval = 300;
     const [pos, setPos] = useState(0);
+
 
     // if (router.isFallback || !blog?.published) {
     //     return 
     // }
+
+    useEffect(() => {
+        // Clear the existing timer when the position changes
+        const timer = setTimeout(() => {
+            setPos((pos + 1) % case_study.header_images.length);
+        }, 5000);
+
+        return () => {
+            clearTimeout(timer); // Clear the timer when the component unmounts or when pos changes
+        };
+    }, [pos, case_study.header_images.length]);
 
     return (
         <>
@@ -29,13 +44,29 @@ const CaseStudy = ({ case_study }: { case_study: CaseStudy }) => {
                 <Header />
                 <div className={styles.hero_wrapper}>
                     {/* Gallery */}
-                    <div className={styles.gallery}>
-                        <div className={styles.gallery_item}
-                            style={{
-                                backgroundImage: `url(${case_study.header_images[pos]})`,
-                            }}
-                        />
-                    </div>
+                    <motion.div className={styles.gallery}
+                        style={{
+                            width: `${case_study.header_images.length * 100}%`,
+                        }}
+                        animate={{
+                            x: `-${pos / case_study.header_images.length * 100}%`,
+                        }}
+                        transition={{
+                            type: "spring",
+                            stiffness: 100,
+                            damping: 20,
+                        }}
+                    >
+                        {case_study.header_images.map((img: string, index: number) => (
+                            <div className={styles.gallery_item}
+                                style={{
+                                    backgroundImage: `url(${img})`,
+                                    opacity: pos === index ? 1 : 0,
+                                }}
+                            />
+                        ))}
+                    </motion.div>
+
                     <div className={styles.hero}>
                         <div className={styles.hero_inner}>
                             <div className={styles.left}>
@@ -48,6 +79,17 @@ const CaseStudy = ({ case_study }: { case_study: CaseStudy }) => {
                                 </div>
                                 <h1>{case_study.title}</h1>
                                 <p>{case_study.short_desc}</p>
+                            </div>
+                            <div className={styles.right}>
+                                <div className={styles.case_study_nav}>
+                                    {case_study.header_images.map((img: string, index: number) => (
+                                        <div className={styles.case_study_nav_item_wrapper} onClick={() => setPos(index)}
+                                        >
+                                            <div className={styles.case_study_nav_item} id={`${index === pos ? styles.active : ''}`}
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -62,6 +104,8 @@ const CaseStudy = ({ case_study }: { case_study: CaseStudy }) => {
                         }}
                     ></div>
                 </div>
+
+                <Call />
 
                 <Footer />
             </main>

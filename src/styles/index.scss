@@ -196,3 +196,35 @@ main {
     margin-top: 120px;
     margin-bottom: 120px;
 }
+
+.cs-col-2-left,
+.cs-col-2-right {
+    display: flex;
+    gap: 30px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+
+    h3 {
+        margin-top: 60px;
+    }
+
+    @include sm {
+        flex-direction: column;
+
+        img {
+            max-width: 100% !important;
+            width: 100%;
+        }
+    }
+
+    img {
+        max-width: calc(50% - 15px);
+        border-radius: 5px;
+    }
+}
+
+.cs-col-2-right {
+    @include sm {
+        flex-direction: column-reverse;
+    }
+}

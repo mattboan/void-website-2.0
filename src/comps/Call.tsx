@@ -20,7 +20,7 @@ export const Call = (props: Props) => {
     }, [])
 
     return (
-        <div className={styles.call_wrapper}>
+        <div className={styles.call_wrapper} id="call">
             {!props.exclude_header && <div className={styles.header}>
                 <h2>
                     Got an idea?

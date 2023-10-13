@@ -9,7 +9,7 @@ export const Footer = () => {
                 </div>
                 <div>|</div>
                 <div className={styles.social_link}>
-                    <a href="https://www.linkedin.com/in/matt-boan-656561129/">LinkedIn</a>
+                    <a href="https://www.linkedin.com/company/97417693/">LinkedIn</a>
                 </div>
             </div>
 

@@ -2,17 +2,11 @@ import styles from "@/styles/recentwork.module.scss";
 import { useState } from "react";
 import { ArrowButton } from "./ArrowButton";
 import { motion } from "framer-motion";
+import { CaseStudy } from "@/utils/case-studies.util";
 
-export interface RecentWork {
-    id: number;
-    title: string;
-    desc: string;
-    tags: string[];
-    img: string;
-}
 
 interface Props {
-    recent_work: RecentWork[];
+    recent_work: CaseStudy[];
 }
 
 export const RecentWorkList = (props: Props) => {
@@ -59,7 +53,7 @@ export const RecentWorkList = (props: Props) => {
 }
 
 interface ItemProps {
-    work: RecentWork;
+    work: CaseStudy;
 }
 
 export const RecentWorkItem = (props: ItemProps) => {
@@ -76,14 +70,14 @@ export const RecentWorkItem = (props: ItemProps) => {
                 </div>
 
                 <h4>{props.work.title}</h4>
-                <p>{props.work.desc}</p>
+                <p>{props.work.short_desc}</p>
                 <div className={styles.a_wrapper}>
-                    <a href={`case-studies/${props.work.id}`}>See more</a>
+                    <a href={`case-studies/${props.work.slug}`}>See more</a>
                 </div>
             </div>
 
             <div className={styles.image_con}>
-                <div className={styles.image} style={{ backgroundImage: `url(${props.work.img})` }} />
+                <div className={styles.image} style={{ backgroundImage: `url(${props.work.header_images?.[0]})` }} />
             </div>
         </div>
     )
