@@ -45,7 +45,7 @@ export default function Services() {
 
                         </div>
                         <div className={styles.image}>
-                            <Image src="/img/services-app-dev.png" alt="Mobile App" width={500} height={500} />
+                            <Image src="/img/23rd-dash-2.png" alt="Mobile App" width={500} height={500} />
                         </div>
                     </div>
 
@@ -58,7 +58,7 @@ export default function Services() {
                             <p>Whether you need an Android, iOS, or cross platform mobile app we have you covered. We can seamlessly integrate your business and bring it into the future with a realiable and trustworthy mobile app.</p>
                         </div>
                         <div className={styles.image}>
-                            <Image src="/img/services-website.png" alt="Mobile App" width={500} height={500} />
+                            <Image src="/img/23rd-web.png" alt="Mobile App" width={500} height={500} />
                         </div>
                     </div>
 
@@ -71,7 +71,7 @@ export default function Services() {
 
                         </div>
                         <div className={styles.image}>
-                            <Image src="/img/bulb.png" alt="Mobile App" width={500} height={500} />
+                            <Image src="/img/sensor-2.png" alt="Mobile App" width={500} height={500} />
                         </div>
                     </div>
                 </div>

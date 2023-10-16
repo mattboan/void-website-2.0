@@ -220,6 +220,10 @@ main {
     img {
         max-width: calc(50% - 15px);
         border-radius: 5px;
+        min-height: 450px;
+        object-fit: cover;
+
+        // Height same as the width
     }
 }
 
