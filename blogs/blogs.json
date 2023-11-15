@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "title": "Why does design matter? ",
+        "short_desc": "Standing out in an AI generated world with core design principles.",
+        "tags": ["Digtal", "Design"],
+        "header_image": ["/img/blog-1-header.jpeg"],
+        "slug": "why-does-design-matter",
+        "post_path": "/blogs/posts/1.md"
+    }
+]

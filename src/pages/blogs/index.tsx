@@ -1,12 +1,9 @@
-
-
 import styles from "@/styles/blogs.module.scss";
 import { Footer } from '@/comps/Footer';
 import { Header } from '@/comps/Header';
-import { CaseStudy, get_case_studies } from '@/utils/case-studies.util';
 import Head from 'next/head';
 import { useRouter } from "next/router";
-import { Blog } from "@/utils/blogs.util";
+import { Blog, get_blogs } from "@/utils/blogs.util";
 
 const Blogs = ({ blogs }: { blogs: Blog[] }) => {
     const router = useRouter();
@@ -25,15 +22,34 @@ const Blogs = ({ blogs }: { blogs: Blog[] }) => {
                 <Header />
 
                 <div className={styles.header}>
-                    <h1>We push the boundaries of what's possible to create a future to strive towards.</h1>
+                    <h1>Blogs</h1>
                 </div>
 
-                <div className={styles.case_studies}>
-                    {blogs?.map((blog: Blog) => (
-                        <div></div>
+                <div className={styles.blogs}>
+                    {blogs?.map((blog: Blog, i: number) => (
+                        <div className={styles.blog} onClick={() => router.push(`/blogs/${blog.slug}`)}>
+                            <div className={styles.blog_image}>
+                                <img src={blog.header_image} />
+                            </div>
+                            <div className={styles.blog_content}>
+                                <div className={styles.blog_tags}>
+                                    {blog?.tags?.map((tag: string) => (
+                                        <div className={styles.blog_tag}>
+                                            {tag}
+                                        </div>
+                                    ))}
+                                </div>
+                                <h2>{blog.title}</h2>
+                                <p>{blog.short_desc}</p>
+                            </div>
+                        </div>
                     ))}
-                </div>
 
+                    {/* If the number is uneven */}
+                    {blogs?.length % 2 != 0 && (
+                        <div className={styles.blog}></div>
+                    )}
+                </div>
 
                 <Footer />
             </main>
@@ -42,11 +58,12 @@ const Blogs = ({ blogs }: { blogs: Blog[] }) => {
 };
 
 export async function getStaticProps() {
-    const case_studies = await get_case_studies();
+    // const blogs = await get_blogs();
+    const blogs = [] as any[];
 
     return {
         props: {
-            case_studies: case_studies,
+            blogs: blogs,
         },
     };
 }

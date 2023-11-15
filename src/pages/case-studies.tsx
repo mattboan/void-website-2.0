@@ -47,8 +47,11 @@ const CaseStudies = ({ case_studies }: { case_studies: CaseStudy[] }) => {
                             </div>
                         </div>
                     ))}
-                </div>
 
+                    {case_studies?.length % 2 != 0 && (
+                        <div className={styles.case_study}></div>
+                    )}
+                </div>
 
                 <Footer />
             </main>

@@ -1,4 +1,5 @@
-
+import path from "path";
+import fs from 'fs';
 
 
 export interface Blog {
@@ -8,13 +9,23 @@ export interface Blog {
     short_desc: string;
     header_image: string;
     slug: string;
+    content?: string;
+    post_path: string;
 }
 
 /**
  * Get the blogs from the JSON file
  */
 export const get_blogs = async (): Promise<Blog[]> => {
-    return [];
+    try {
+        const projects_file_path = path.join(
+            process.cwd(),
+            '/blogs/blogs.json'
+        );
+        return JSON.parse(fs.readFileSync(projects_file_path, 'utf-8'));
+    } catch (err) {
+        return [];
+    }
 }
 
 
