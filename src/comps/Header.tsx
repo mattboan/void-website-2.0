@@ -32,6 +32,7 @@ export const Header = () => {
                 <div className={`${styles.actions_con} ${menuOpen && styles.menu_open}`}>
                     <Link href="/services">Our Services</Link>
                     <Link href="/case-studies">Case Studies</Link>
+                    <Link href="/blogs">Blogs</Link>
                     <Button onClick={() => router.push("/#call")}>
                         Book a Call
                     </Button>

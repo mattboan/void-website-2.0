@@ -18,20 +18,15 @@ const CaseStudy = ({ case_study }: { case_study: CaseStudy }) => {
     const interval = 300;
     const [pos, setPos] = useState(0);
 
-
-    // if (router.isFallback || !blog?.published) {
-    //     return 
-    // }
-
     useEffect(() => {
         // Clear the existing timer when the position changes
-        const timer = setTimeout(() => {
-            setPos((pos + 1) % case_study.header_images.length);
-        }, 5000);
+        // const timer = setTimeout(() => {
+        //     setPos((pos + 1) % case_study.header_images.length);
+        // }, 5000);
 
-        return () => {
-            clearTimeout(timer); // Clear the timer when the component unmounts or when pos changes
-        };
+        // return () => {
+        //     clearTimeout(timer); // Clear the timer when the component unmounts or when pos changes
+        // };
     }, [pos, case_study.header_images.length]);
 
     return (
@@ -42,6 +37,7 @@ const CaseStudy = ({ case_study }: { case_study: CaseStudy }) => {
             </Head>
             <main>
                 <Header />
+                <div className={styles.hero_spacer} />
                 <div className={styles.hero_wrapper}>
                     {/* Gallery */}
                     <motion.div className={styles.gallery}
