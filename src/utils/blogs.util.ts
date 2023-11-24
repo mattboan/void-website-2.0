@@ -11,6 +11,7 @@ export interface Blog {
     slug: string;
     content?: string;
     post_path: string;
+    author: string;
 }
 
 /**

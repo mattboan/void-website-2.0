@@ -173,7 +173,6 @@ main {
                 align-items: flex-start;
                 gap: 15px;
                 transition: top 0.5s ease-in-out;
-
             }
 
             .menu_open {
@@ -203,9 +202,22 @@ main {
     gap: 30px;
     margin-top: 120px;
     margin-bottom: 120px;
+    align-items: center;
+
+    .text {
+        padding: 15px;
+
+        @include sm {
+            padding: 0px;
+        }
+    }
+
+    p {
+        line-height: 1.25rem;
+    }
 
     h3 {
-        margin-top: 60px;
+        // margin-top: 60px;
     }
 
     @include sm {
@@ -230,5 +242,26 @@ main {
 .cs-col-2-right {
     @include sm {
         flex-direction: column-reverse;
+    }
+}
+
+.thirds {
+    padding-top: 60px;
+    max-width: 66%;
+
+    h3 {
+        line-height: 2.25rem;
+    }
+
+    p {
+        line-height: 1.25rem;
+    }
+
+    @include sm {
+        max-width: 100%;
+    }
+
+    @include md {
+        max-width: 100%;
     }
 }

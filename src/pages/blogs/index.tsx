@@ -58,8 +58,7 @@ const Blogs = ({ blogs }: { blogs: Blog[] }) => {
 };
 
 export async function getStaticProps() {
-    // const blogs = await get_blogs();
-    const blogs = [] as any[];
+    const blogs = await get_blogs();
 
     return {
         props: {

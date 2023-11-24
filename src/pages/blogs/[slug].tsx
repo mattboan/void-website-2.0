@@ -8,62 +8,64 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import prism from 'remark-prism';
 import { Header } from '@/comps/Header';
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { Call } from "@/comps/Call";
 import { Blog, get_blog_by_slug, get_blogs } from "@/utils/blogs.util";
 
 const CaseStudy = ({ blog }: { blog: Blog }) => {
     const router = useRouter();
 
-    // 404 - if not exists
-    if (!blog) {
-        return (
-            <>
-                <Head>
-                    <title>void - Blog</title>
-                    <meta
-                        name="description"
-                        content=""
-                    />
-                </Head>
+    // // 404 - if not exists
+    // if (!blog) {
+    //     return (
+    //         <>
+    //             <Head>
+    //                 <title>void - Blog</title>
+    //                 <meta
+    //                     name="description"
+    //                     content=""
+    //                 />
+    //             </Head>
 
-                <main>
-                    <Header />
+    //             <main>
+    //                 <Header />
 
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />  <br />
-                    <br />
-                    <br />
-                    <br />
+    //                 <br />
+    //                 <br />
+    //                 <br />
+    //                 <br />
+    //                 <br />
+    //                 <br />
+    //                 <br />
+    //                 <br />
+    //                 <br />
+    //                 <br />
+    //                 <br />
+    //                 <br />
 
 
-                    <div className={styles.blogs}>
-                        <div className={styles.blog}>
-                            <div className={styles.blog_content}>
-                                <h2>404 - Not Found</h2>
-                                <p>Sorry, the blog you are looking for does not exist.</p>
-                            </div>
-                        </div>
-                    </div>
+    //                 <div className={styles.blogs}>
+    //                     <div className={styles.blog}>
+    //                         <div className={styles.blog_content}>
+    //                             <h2>404 - Not Found</h2>
+    //                             <p>Sorry, the blog you are looking for does not exist.</p>
+    //                         </div>
+    //                     </div>
+    //                 </div>
 
-                    <Footer />
-                </main>
-            </>
-        );
-    }
+    //                 <Footer />
+    //             </main>
+    //         </>
+    //     );
+    // }
 
     return (
         <>
             <Head>
-                <title>void - {blog.title || ' Post'}</title>
-                <meta name="description" content={blog.short_desc || ''} />
+                <title>void - {blog?.title || ' Post'}</title>
+                <meta name="description" content={blog?.short_desc || ''} />
+                <meta property="og:title" content={blog?.title || ""} />
+                <meta property="og:description" content={blog?.short_desc || ""} />
+                <meta property="og:image" content={blog?.header_image?.[0] || ""} />
+                <meta property="og:type" content="website" />
             </Head>
             <main>
                 <Header />
@@ -73,7 +75,7 @@ const CaseStudy = ({ blog }: { blog: Blog }) => {
                     <div className={styles.header_iamge}>
                         <div className={styles.header_image_inner}
                             style={{
-                                backgroundImage: `url(${blog.header_image})`,
+                                backgroundImage: `url(${blog?.header_image})`,
                             }}
                         />
                     </div>
@@ -87,8 +89,9 @@ const CaseStudy = ({ blog }: { blog: Blog }) => {
                                         </div>
                                     ))}
                                 </div>
-                                <h1>{blog.title}</h1>
-                                <p>{blog.short_desc}</p>
+                                <h1>{blog?.title}</h1>
+                                <p>{blog?.short_desc}</p>
+                                <p className={styles.author}>{blog?.author}</p>
                             </div>
                         </div>
                     </div>
@@ -104,7 +107,7 @@ const CaseStudy = ({ blog }: { blog: Blog }) => {
                     ></div>
                 </div>
 
-                <Call />
+                {/* <Call /> */}
 
                 <Footer />
             </main>
@@ -113,10 +116,9 @@ const CaseStudy = ({ blog }: { blog: Blog }) => {
 };
 
 export async function getStaticPaths() {
-    // const blogs = await get_blogs();
-    const blogs = [] as any[];
+    const blogs = await get_blogs();
 
-    const paths = await blogs.map((blog: Blog) => ({
+    const paths = blogs.map((blog: Blog) => ({
         params: {
             slug: blog.slug,
         },
@@ -131,7 +133,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }: any) {
     const fs = require('fs');
     const path = require('path');
-
     let blog = null;
 
     try {
@@ -160,7 +161,7 @@ export async function getStaticProps({ params }: any) {
 
     return {
         props: {
-            blog: null,
+            blog: blog,
             revalidate: 60000,
         },
     };

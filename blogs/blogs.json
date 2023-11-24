@@ -1,11 +1,12 @@
 [
     {
         "id": 1,
-        "title": "Why does design matter? ",
+        "title": "Why Design Matters: Standing out in an AI Generated World with Core Design Principles",
         "short_desc": "Standing out in an AI generated world with core design principles.",
-        "tags": ["Digtal", "Design"],
-        "header_image": ["/img/blog-1-header.jpeg"],
+        "tags": ["Digtal", "Design", "Theory"],
+        "header_image": ["/img/blog/cover-1.jpeg"],
         "slug": "why-does-design-matter",
-        "post_path": "/blogs/posts/1.md"
+        "post_path": "/blogs/posts/1.md",
+        "author": "Brooke Lee Harrison"
     }
 ]
